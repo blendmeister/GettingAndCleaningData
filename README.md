@@ -29,5 +29,4 @@ You should create one R script called run_analysis.R that does the following.
 3. Run the R script ```run_analysis.r```. Results generated are saved in ```tidy_data.txt```under location mentioned in step 2.
 
 ##Project Output
-
 ```tidy_data.txt``
