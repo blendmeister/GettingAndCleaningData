@@ -26,7 +26,7 @@ You should create one R script called run_analysis.R that does the following.
 
 1. Open the R script ```run_analysis.r``` using a text editor. (The script executes to fulfil all 5 requirements described in __Project Requirements__, additional details are found in __CodeBook.md__.
 2. Change parameter of the ```setwd()``` function call to the working directory/folder, where these the R script is saved).
-3. Run the R script ```run_analysis.r```. Results generated are saved in ```tidy_data.txt```under location mentioned in step 2.
+3. Run the R script ```run_analysis.r```. Results generated are saved in __tidy_data.txt__ under location mentioned in step 2.
 
 ##Project Output
- ```tidy_data.txt```
+ __tidy_data.txt__
