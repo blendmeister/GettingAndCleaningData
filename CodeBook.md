@@ -70,16 +70,16 @@ unzip(zipfile="./Get_Clean_Data/Dataset.zip",exdir="./Get_Clean_Data")
 ##‘UCI HAR Dataset’ files used:
 
 * Subject
-** test/subject_test.txt
-** train/subject_train.txt
+ * test/subject_test.txt
+ * train/subject_train.txt
 
 * Activity
-** test/X_test.txt
-** train/X_train.txt
+ * test/X_test.txt
+ * train/X_train.txt
 
 * Data
-** test/y_test.txt
-** train/y_train.txt
+ * test/y_test.txt
+ * train/y_train.txt
 
 * features.txt - Column variables for dataframe /datatable to be created
 
