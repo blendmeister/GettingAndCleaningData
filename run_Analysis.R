@@ -121,7 +121,7 @@ Table_Mean_SD <-Table_Mean_SD[order(Table_Mean_SD$subject,Table_Mean_SD$activity
 ##Load plyr package
 library(plyr)
 
-##Aggregate with respect to subject and activity
+##Aggregate with respect to subject and activity before taking mean
 tidy_data <- ddply(Table_Mean_SD,.(subject,activity),colwise(mean))
 ##OR
 ## tidy_data <- ddply(Table_Mean_SD, .(subject, activity), .fun=function(x){ colMeans(x[,-c (87:88)]) })
