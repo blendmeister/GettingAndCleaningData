@@ -55,5 +55,75 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 #Data Downloading
 
 ```r
+#Load downloader package
+library(downloader)
 
+#Download and put zip file into data folder (Get_Clean_Data) (under working directory to be set by user)
+
+if(!file.exists("./Get_Clean_Data")){dir.create("./Get_Clean_Data")}
+fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+download.file(fileUrl,destfile="./Get_Clean_Data/Dataset.zip",method="libcurl")
+
+#Unzip file to directory/Get_Clean_Data. 
+unzip(zipfile="./Get_Clean_Data/Dataset.zip",exdir="./Get_Clean_Data")
+```
+##‘UCI HAR Dataset’ files used:
+
+* Subject
+** test/subject_test.txt
+** train/subject_train.txt
+
+* Activity
+** test/X_test.txt
+** train/X_train.txt
+
+* Data
+** test/y_test.txt
+** train/y_train.txt
+
+* features.txt - Column variables for dataframe /datatable to be created
+
+* activity_labels.txt - For matching class labels with respective activity
+
+##Create data tables after reading in above files:
+
+```r
+#Read unzipped datafiles
+dataset_path <- file.path("./Get_Clean_Data" , "UCI HAR Dataset")
+files<-list.files(dataset_path, recursive=TRUE)
+files
+
+#Read data from the files into the variables
+
+#Activity Data
+ActivityTest  <- read.table(file.path(dataset_path, "test" , "Y_test.txt" ),header = FALSE)
+ActivityTrain <- read.table(file.path(dataset_path, "train", "Y_train.txt"),header = FALSE)
+
+#Subject Data
+SubjectTrain <- read.table(file.path(dataset_path, "train", "subject_train.txt"),header =  FALSE)
+SubjectTest  <- read.table(file.path(dataset_path, "test" , "subject_test.txt"),header =  FALSE)
+
+#Features Data
+FeaturesTest  <- read.table(file.path(dataset_path, "test" , "X_test.txt" ),header = FALSE)
+FeaturesTrain <- read.table(file.path(dataset_path, "train", "X_train.txt"),header = FALSE)
+```
+#1. Merges the training and the test sets to create one data set.
+```r
+#Merges the training and the test sets to create one data set.
+
+##Concatenate by rows
+#Merge all training and the test sets by row binding 
+Subject <- rbind(SubjectTrain, SubjectTest)
+Activity<- rbind(ActivityTrain, ActivityTest)
+Features<- rbind(FeaturesTrain, FeaturesTest)
+
+##Set column names for each feature, subject and activity
+names(Subject)<-c("subject")
+names(Activity)<- c("activity")
+FeaturesNames <- read.table(file.path(dataset_path, "features.txt"),head=FALSE)
+names(Features)<- FeaturesNames$V2
+
+##Merge columns to get final data frame, Features_Subj_Act
+Sub_Act <- cbind(Subject, Activity)
+Features_Subj_Act <- cbind(Features, Sub_Act)
 ```
