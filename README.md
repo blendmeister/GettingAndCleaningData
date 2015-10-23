@@ -22,14 +22,11 @@ You should create one R script called run_analysis.R that does the following.
 4. Appropriately labels the data set with descriptive activity names.
 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.  
 
-Good luck!  
-
 ##How to run to reproduce project results
 
 1. Open the R script ```run_analysis.r``` using a text editor. (The script executes to fulfil all 5 requirements described in __Project Requirements__, additional details are found in __CodeBook.md__.
 2. Change parameter of the ```setwd()``` function call to the working directory/folder, where these the R script is saved).
 3. Run the R script ```run_analysis.r```. Results generated are saved in ```tidy_data.txt```under location mentioned in step 2.
- 
 
 ##Project Output
 
