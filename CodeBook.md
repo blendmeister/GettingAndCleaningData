@@ -196,4 +196,5 @@ tidy_data <- ddply(Table_Mean_SD,.(subject,activity),colwise(mean))
 ##Write tidy_data into a table t
 ##write.table(tidy_data, file = "tidy_data.txt",row.name=FALSE)
 write.table(tidy_data,file.path("./Get_Clean_Data" , "tidy_data.txt"),row.name=FALSE)
+
 ```
