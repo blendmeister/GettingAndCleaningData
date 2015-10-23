@@ -28,5 +28,5 @@ You should create one R script called run_analysis.R that does the following.
 2. Change parameter of the ```setwd()``` function call to the working directory/folder, where these the R script is saved).
 3. Run the R script ```run_analysis.r```. Results generated are saved in ```tidy_data.txt```under location mentioned in step 2.
 
-##Project Outpu
-__tidy_data.txt__
+##Project Output
+```tidy_data.txt```
