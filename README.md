@@ -30,4 +30,4 @@ You should create one R script called run_analysis.R that does the following.
 
 ##Project Output
 
-```tidy_data.txt`` (tab-delimited text)
+```tidy_data.txt``
